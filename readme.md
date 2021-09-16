@@ -4,6 +4,17 @@ yield tokenized reddit posts for natural language processing
 
 Also provides some basic user stats with visualizations using pygal(generate svg in python)
 
+## You will need PRAW setup with a reddit api key & secret
+follow directions in https://praw.readthedocs.io/en/stable/getting_started/authentication.html#oauth
+
+create a `creds.json` file 
+```json
+[{
+    "client_id": "",
+    "client_secret": ""
+}]
+```
+
 ## To run the server (tested using py 3.8.10:
 
 ### macOS/Linux 
