@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block body %}
+<!-- your content here... -->
+<div class="container">
+    <h1>Reddit topic modeling client</h1>
+    <div class="item">
+        <div>
+            <p id=login>{{ user }} is logged in</p>
+            <form class='bholder' action="{{ url_for('download') }}">
+                <input type="number" name="num_posts_dl">
+                <input type="submit"></input>
+            </form>
+        </div>
+    </div>
+    <div class="item">
+        <div>
+            <p>{{ user }} has {{ numposts }} saved posts</p>
+            <form class='bholder' action="/user_stats">
+                <button type="submit"><span>User Stats</span></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="item">
+        <div>
+            <p>Perform topic clustering on {{ user }}'s posts</p>
+            <br>
+            <p>This is using an incredible package called <a href="https://github.com/bmabey/pyLDAvis">PyLDAvis</a><br> to cluster a user's saved reddit posts by their contents(title,body,comments)</p>
+            <form class='bholder' action="{{ url_for('user_clusters') }}">
+                <input type="number" name="number_of_posts">
+                <input type="number" name="num_clusters">
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
