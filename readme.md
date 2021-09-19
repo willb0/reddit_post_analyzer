@@ -42,8 +42,3 @@ Still working on the web interface, here are the endpoints
 /download will download some posts
 /user_clusters takes the input box as (posts,clusters) and does some magic to show LDA(will talk more later)
 
-can use reddit creds for testing:
-u: sussybaklava
-pw: wizard27
-
-i saved a bunch of random posts from r/all and also specific subreddits r/nosleep r/programming r/nba feel free to add more
