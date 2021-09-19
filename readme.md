@@ -1,4 +1,4 @@
-# Reddit Post Tokenizer using PRAW,Flask,nltk,gensim
+# Reddit Post Analyzer using PRAW,Flask,nltk,gensim
 This project is a basic Flask server with no middleware,session mgmt etc to
 yield tokenized reddit posts for natural language processing
 
