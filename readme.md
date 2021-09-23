@@ -42,3 +42,10 @@ Still working on the web interface, here are the endpoints
 /download will download some posts
 /user_clusters takes the input box as (posts,clusters) and does some magic to show LDA(will talk more later)
 
+## Screenshots
+localhost/
+![Homepage](img/home.png)
+localhost/user_stats
+![PyGal graphs](img/graphs.png)
+localhost/user_clusters
+![LDA Page](img/LDA.png)
