@@ -10,6 +10,8 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
 
 COPY ./ /usr/src/api/
 
+RUN python -c "import nltk;nltk.download('stopwords')"
+
 CMD ["uvicorn","main:app","--host","0.0.0.0","--port","80"]
 
 

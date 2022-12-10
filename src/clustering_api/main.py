@@ -1,7 +1,10 @@
 from fastapi import FastAPI,Request
 from starlette.responses import RedirectResponse
 from praw import Reddit
+from utils import *
+from models import *
 import os
+import time
 
 CLIENT_ID  = os.environ["CLIENT_ID"]
 CLIENT_SECRET = os.environ["CLIENT_SECRET"]
@@ -16,9 +19,23 @@ reddit = Reddit(
     user_agent = 'stinky'
 )
 
+@app.middleware('http')
+async def add_process_time_header(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    process_time = time.time() - start_time
+    print(process_time)
+    response.headers["X-Process-Time"] = str(process_time)
+    return response
+
 @app.get('/')
 def home():
     return {'message':'Hello from docker fastapi template'}
+
+@app.post('/saved_posts')
+def saved(req:PostsRequest):
+    return {'res':nltk_praw(reddit,req.num_posts)}
+
 
 @app.get('/user')
 def user(request: Request):
@@ -35,6 +52,7 @@ def authorize(request: Request):
     user = reddit.user.me()
     print(f'{user} logged into reddit')
     return RedirectResponse(url=app.url_path_for('user'))
+
 
 
 
