@@ -1,0 +1,11 @@
+services:
+  clustering_api:
+    build: src/clustering_api
+    ports:
+      - "80:80"
+    environment:
+      CLIENT_ID: 8ZSsKxF8aPad6EdMnIWttg
+      CLIENT_SECRET: OiTx-eFaaugqoV9bKrAtQMRQZU8QqA
+      REDIRECT_URI: http://localhost:80/authorize_callback
+    
+
