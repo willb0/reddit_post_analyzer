@@ -1,5 +1,7 @@
 fastapi
 uvicorn
-praw
+asyncpraw
+asyncio
+nest_asyncio
 nltk
 pydantic
